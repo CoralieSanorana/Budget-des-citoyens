@@ -20,34 +20,32 @@
 
     <div class="contenair">
         <section id="home">
-            <header>
-                <h2>Depenses Par Nature</h2>
-            </header>
-        
-            <p>
-                En 2025, les dépenses publiques atteignent 16 304,9 milliards
-                d’ariary, dont 14 416,4 milliards d’Ariary pour le Budget Général
-                hors opérations d’ordre et intérêts de la dette. 52,4% de ces dépenses 
-                sont consacrés aux investissements et 14,1% aux dépenses
-                de fonctionnement hors solde. Par rapport à 2024 (12 782,4 milliards
-                d’ariary), cela représente une augmentation de 27,6%. Cette hausse
-                est principalement due à la priorisation des investissements dans
-                les secteurs sociaux de base, tels que la santé, l’éducation, l’énergie,
-                l’eau et les infrastructures.
-            </p>
-            <p>
-                <h2>1. Répartition des dépenses par nature économique</h2>
-                <table border="1">
-                    <tr>
-                        <td><a href="#interetdette">Intérêts de la Dette (2024-2025)</a></td>
-                        <td><a href="#soldeponsion">Dépenses de soldes et pensions</a></td>
-                        <td><a href="#postebudgetaire">POSTES BUDGÉTAIRES AUTORISÉES POUR 2025</a></td>
-                        <td><a href="#depensefonctionnement">Dépenses de fonctionnement</a></td>
-                        <td><a href="#depenseinvestissement">Dépenses d’investissement</a></td>
-                        <td><a href="#par_administration">Répartition des dépenses</a></th>
-                    </tr>
-                </table>
-            </p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p>
+                        En 2025, les dépenses publiques atteignent 16 304,9 milliards
+                        d’ariary, dont 14 416,4 milliards d’Ariary pour le Budget Général
+                        hors opérations d’ordre et intérêts de la dette. 52,4% de ces dépenses 
+                        sont consacrés aux investissements et 14,1% aux dépenses
+                        de fonctionnement hors solde. Par rapport à 2024 (12 782,4 milliards
+                        d’ariary), cela représente une augmentation de 27,6%. Cette hausse
+                        est principalement due à la priorisation des investissements dans
+                        les secteurs sociaux de base, tels que la santé, l’éducation, l’énergie,
+                        l’eau et les infrastructures.
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <ul>
+                        <li><a href="#interetdette">Intérêts de la Dette (2024-2025)</a></li>
+                        <li><a href="#soldeponsion">Dépenses de soldes et pensions</a></li>
+                        <li><a href="#postebudgetaire">POSTES BUDGÉTAIRES AUTORISÉES POUR 2025</a></li>
+                        <li><a href="#depensefonctionnement">Dépenses de fonctionnement</a></li>
+                        <li><a href="#depenseinvestissement">Dépenses d’investissement</a></li>
+                        <li><a href="#par_administration">Répartition des dépenses</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2>1. Répartition des dépenses par nature économique</h2>
         
             <table border="1" class="table table-striped table-hover align-middle text-center fs-5">
                 <thead class="table-dark">
