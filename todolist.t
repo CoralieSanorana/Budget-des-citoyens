@@ -27,12 +27,19 @@ Perspectives_economiques.php : (Coralie)
     }
 
 Recettes.php :
-    [] afficher les donnees de la table recettes
-        [] recettes fiscales interieurs
+    [ok] afficher les donnees de la table recettes
+        - [ok] recettes fiscales interieurs
            - function get_all_recettes_fiscales_interieurs()
-        [] recettes douanieres
-        [] recettes non fiscales
-        [] Dons
+        
+        - [ok] recettes douanieres
+           -> function get_all_recette_douaniere()
+        
+        - [ok] recettes non fiscales
+           -> function get_all_recette_nonFisc () 
+        
+        - [ok] Dons
+           -> function get_all_don()
+
     [] ajouter un graphique pour illustrer les donnees
 
 Depenses.php : (Coralie)
@@ -56,6 +63,9 @@ Depenses.php : (Coralie)
 
 Deficit_budgetaire.php :
     [] afficher les donnees de la table deficit_budgetaire
+        - [] Financement du deficit
+           -> function get_def_buget()
+
     [] ajouter un graphique pour illustrer les donnees
 
 Disp_douan.php :
