@@ -1,22 +1,22 @@
 <?php 
-    include("../inc/functions.php");
+    include("../inc/header.php");
     $depenses = get_all_depensesparnature();
 ?>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
-        /* Style pour centrer le diagramme */
-        .chart-container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        /* Style pour la section */
-        section {
-            padding: 40px 20px;
-        }
-    </style>
+    /* Style pour centrer le diagramme */
+    .chart-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    /* Style pour la section */
+    section {
+        padding: 40px 20px;
+    }
+</style>
 
     <div class="contenair">
         <section id="home">
@@ -37,17 +37,15 @@
             </p>
             <p>
                 <h2>1. Répartition des dépenses par nature économique</h2>
-                <table border="1" class="table table-striped table-hover align-middle text-center fs-5">
-                    <thead class="table-light">
-                        <tr>
-                            <th><a href="#interetdette">Intérêts de la Dette (2024-2025)</a></th>
-                            <th><a href="#soldeponsion">Dépenses de soldes et pensions</a></th>
-                            <th><a href="#postebudgetaire">POSTES BUDGÉTAIRES AUTORISÉES POUR 2025</a></th>
-                            <th><a href="#depensefonctionnement">Dépenses de fonctionnement</a></th>
-                            <th><a href="#depenseinvestissement">Dépenses d’investissement</a></th>
-                            <th><a href="#par_administration">Répartition des dépenses</a></th>
-                        </tr>
-                    </thead>
+                <table border="1">
+                    <tr>
+                        <td><a href="#interetdette">Intérêts de la Dette (2024-2025)</a></td>
+                        <td><a href="#soldeponsion">Dépenses de soldes et pensions</a></td>
+                        <td><a href="#postebudgetaire">POSTES BUDGÉTAIRES AUTORISÉES POUR 2025</a></td>
+                        <td><a href="#depensefonctionnement">Dépenses de fonctionnement</a></td>
+                        <td><a href="#depenseinvestissement">Dépenses d’investissement</a></td>
+                        <td><a href="#par_administration">Répartition des dépenses</a></th>
+                    </tr>
                 </table>
             </p>
         
