@@ -29,13 +29,11 @@
         return $result_array;
     }
 
-<<<<<<< HEAD
+
     function get_all_recettes_fiscales_interieurs(){
         $requete = "SELECT * FROM RecettesFiscalesInterieures";
-=======
     function get_all_depensesparnature(){
         $requete = "SELECT * FROM DepensesParNature";
->>>>>>> 8099d531f1bd15af0ae6ad0b96a3d7f5cae8a8d3
         $result = mysqli_query(dbconnect(),$requete);
         $result_array = [];
         if ($result) {
@@ -47,8 +45,7 @@
         }
         return $result_array;
     }
-<<<<<<< HEAD
-=======
+
     
     function get_all_InteretsDette(){
         $requete = "SELECT * FROM InteretsDette";
@@ -134,8 +131,6 @@
         return $result_array;
     }
 
-
->>>>>>> 8099d531f1bd15af0ae6ad0b96a3d7f5cae8a8d3
 
     function get_all_recette_douaniere()
     {
