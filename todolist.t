@@ -13,9 +13,15 @@ dossier images :
 index.php :
      [] lien vers les differentes pages ;
 
-Perpectives economiques.php :
-    [] afficher les donnees de la table perspectives economiques
+Perspectives_economiques.php : (Coralie)
+    [ok] afficher les donnees de la table perspectives economiques
+    [ok] afficher les donnees de la table TauxCroissanceSectorielle
     [] ajouter un graphique pour illustrer les donnees
+    {
+        -dossier inc: functions.php:
+         . [ok]creer get_all_pespect_economiq()
+         . [ok]creer get_all_taux_croissance_sectorielle()
+    }
 
 Recettes.php :
     [] afficher les donnees de la table recettes
