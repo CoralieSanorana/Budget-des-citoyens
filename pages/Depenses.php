@@ -21,6 +21,7 @@
     <div class="contenair">
         <section id="home">
             <div class="row">
+                <h2 class="mb-4 text-center">Depenses</h2>
                 <div class="col-sm-6">
                     <p>
                         En 2025, les dépenses publiques atteignent 16 304,9 milliards
@@ -45,6 +46,7 @@
                     </ul>
                 </div>
             </div>
+            <br><br><br>
             <h2>1. Répartition des dépenses par nature économique</h2>
         
             <table border="1" class="table table-striped table-hover align-middle text-center fs-5">
@@ -58,7 +60,7 @@
                 <tbody>
                     <?php foreach ($depenses as $dep) { ?>
                         <tr>
-                            <td><?= $dep['rubrique']; ?></td>
+                            <td><strong><?= htmlspecialchars($dep['rubrique']); ?></strong></td>
                             <td><?= $dep['montant_2024']; ?></td>
                             <td><?= $dep['montant_2025']; ?></td>
                         </tr>
@@ -161,7 +163,7 @@
                 <tbody>
                     <?php foreach ($solde_pension as $pension) { ?>
                         <tr>
-                            <td><?= $pension['libelle']; ?></td>
+                            <td><strong><?= htmlspecialchars($pension['libelle'])?>; </td>
                             <td><?= $pension['montant_2024']; ?></td>
                             <td><?= $pension['montant_2025']; ?></td>
                             <td><?= $pension['ecart'] ?></td>
@@ -186,7 +188,7 @@
                 <tbody>
                     <?php foreach ($postes as $poste) { ?>
                         <tr>
-                            <td><?= $poste['ministere']; ?></td>
+                            <td><strong><?= htmlspecialchars($poste['ministere']); ?></td>
                             <td><?= $poste['nombre_postes']; ?></td>
                         </tr>
                     <?php } ?>
@@ -212,7 +214,7 @@
                 <tbody>
                     <?php foreach ($depenses_fonctionnement as $poste) { ?>
                         <tr>
-                            <td><?= $poste['categorie']; ?></td>
+                            <td><strong><?= htmlspecialchars($poste['categorie']); ?></td>
                             <td><?= $poste['montant_2024']; ?></td>
                             <td><?= $poste['montant_2025']; ?></td>
                             <td><?= $poste['ecart']; ?></td>
@@ -321,7 +323,7 @@
                 <tbody>
                     <?php foreach ($par_admin as $admin) { ?>
                         <tr>
-                            <td><?= $admin['institution_ministere']; ?></td>
+                            <td><strong><?= htmlspecialchars($admin['institution_ministere']); ?></td>
                             <td><?= $admin['montant_2024']; ?></td>
                             <td><?= $admin['montant_2025']; ?></td>
                         </tr>
