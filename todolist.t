@@ -21,6 +21,9 @@ Perspectives_economiques.php : (Coralie)
         -dossier inc: functions.php:
          . [ok]creer get_all_pespect_economiq()
          . [ok]creer get_all_taux_croissance_sectorielle()
+
+        -dossier sql: view.sql:
+         . [ok]creer view v_perspective_economique
     }
 
 Recettes.php :
@@ -39,9 +42,24 @@ Recettes.php :
 
     [] ajouter un graphique pour illustrer les donnees
 
-Depenses.php :
-    [] afficher les donnees de la table depenses
+Depenses.php : (Coralie)
+    [ok] afficher les donnees de la table depenses 
+    [ok] lier chaque nature de depenses a une section correspondante
+    {
+        .[ok] afficher les donnees de cette table
+        .[] ajouter un graphique pour illustrer les donnees
+    }
     [] ajouter un graphique pour illustrer les donnees
+    {
+        -dossier inc: functions.php:
+         . [ok]creer get_all_depensesparnature()
+         . [ok]creer get_all_InteretsDette()
+         . [ok]creer get_all_DepensesSoldesPensions()
+         . [ok]creer get_all_PostesBudgetaires()
+         . [ok]creer get_all_DepensesFonctionnement()
+         . [ok]creer get_all_DepensesInvestissement()
+         . [ok]creer get_all_RepartitionDepensesAdministratif()
+    }
 
 Deficit_budgetaire.php :
     [] afficher les donnees de la table deficit_budgetaire
