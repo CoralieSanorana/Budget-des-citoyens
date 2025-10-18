@@ -6,7 +6,9 @@
 
 header.php :
     [ok] creer un header commun a toutes les pages
-    
+
+dossier images :
+        [] garder les images utilisees dans le projet
 
 index.php :
      [] lien vers les differentes pages ;
