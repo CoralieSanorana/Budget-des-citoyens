@@ -19,6 +19,11 @@ Perpectives economiques.php :
 
 Recettes.php :
     [] afficher les donnees de la table recettes
+        [] recettes fiscales interieurs
+           - function get_all_recettes_fiscales_interieurs()
+        [] recettes douanieres
+        [] recettes non fiscales
+        [] Dons
     [] ajouter un graphique pour illustrer les donnees
 
 Depenses.php :
