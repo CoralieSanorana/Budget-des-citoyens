@@ -2,9 +2,21 @@
     include("../inc/functions.php");
     $depenses = get_all_depensesparnature();
 ?>
-<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
-<script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+        /* Style pour centrer le diagramme */
+        .chart-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* Style pour la section */
+        section {
+            padding: 40px 20px;
+        }
+    </style>
 
     <div class="contenair">
         <section id="home">
@@ -26,7 +38,7 @@
             <p>
                 <h2>1. Répartition des dépenses par nature économique</h2>
                 <table border="1" class="table table-striped table-hover align-middle text-center fs-5">
-                    <thead class="table-dark">
+                    <thead class="table-light">
                         <tr>
                             <th><a href="#interetdette">Intérêts de la Dette (2024-2025)</a></th>
                             <th><a href="#soldeponsion">Dépenses de soldes et pensions</a></th>
@@ -59,7 +71,7 @@
             </table>
         </section>
         
-        <section id="interetdette">
+        <section id="interetdette" class="container">
             <?php 
             $interet_dette = get_all_InteretsDette();
             $labels = ['2024', '2025'];
@@ -137,10 +149,10 @@
         </section>
 
         <section id="soldeponsion">
+            <h3>b. Dépenses de soldes et pensions</h3>
             <?php 
                 $solde_pension = get_all_DepensesSoldesPensions();
             ?>
-            <h3>b. Dépenses de soldes et pensions</h3>
             <table border="1" class="table table-striped table-hover align-middle text-center fs-5">
                 <thead class="table-dark">
                     <tr>
@@ -215,29 +227,86 @@
             </table>
         </section>
         
-        <section id="depenseinvestissement">
+        <section id="depenseinvestissement" class="container">
+            <h3>d. Dépenses d’investissement</h3>
+            <div class="chart-container">
+                <canvas id="investissementChart"></canvas>
+            </div>
             <?php 
                 $depenses_investissement = get_all_DepensesInvestissement();
+                $labels = ['2024', '2025'];
+                $pip_interne = [];
+                $pip_externe = [];
+                foreach ($depenses_investissement as $row) {
+                    if ($row['source_financement'] == 'PIP interne') {
+                        $pip_interne = [floatval($row['montant_2024']), floatval($row['montant_2025'])];
+                    } elseif ($row['source_financement'] == 'PIP externe') {
+                        $pip_externe = [floatval($row['montant_2024']), floatval($row['montant_2025'])];
+                    }
+                }
             ?>
-            <h3>d. Dépenses d’investissement</h3>
-            <table border="1" class="table table-striped table-hover align-middle text-center fs-5">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Source de finance</th>
-                        <th>2024</th>
-                        <th>2025</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($depenses_investissement as $dep_inv) { ?>
-                        <tr>
-                            <td><?= $dep_inv['source_financement']; ?></td>
-                            <td><?= $dep_inv['montant_2024']; ?></td>
-                            <td><?= $dep_inv['montant_2025']; ?></td>
-                        </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
+           <script>
+                // Initialisation du diagramme en barres
+                const ctx2 = document.getElementById('investissementChart').getContext('2d');
+                new Chart(ctx2, {
+                    type: 'bar',
+                    data: {
+                        labels: <?php echo json_encode($labels); ?>,
+                        datasets: [
+                            {
+                                label: 'PIP interne',
+                                data: <?php echo json_encode($pip_interne); ?>,
+                                backgroundColor: '#eb366cff',
+                                borderColor: '#eb366cff',
+                                borderWidth: 1
+                            },
+                            {
+                                label: 'PIP externe',
+                                data: <?php echo json_encode($pip_externe); ?>,
+                                backgroundColor: '#56ff97ff',
+                                borderColor: '#56ff97ff',
+                                borderWidth: 1
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Montant (en millions)'
+                                }
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Année'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            title: {
+                                display: true,
+                                text: 'Dépenses d\'Investissement par Source (2024-2025)'
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.dataset.label || '';
+                                        let value = context.raw || 0;
+                                        return `${label}: ${value.toFixed(2)} millions`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            </script>
         </section>
         
         <section id="par_administration">
