@@ -49,6 +49,10 @@ include('functions.php');
                     <a class="nav-link" href="../pages/Acronyme.php">Acronymes</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="../pages/Glossaire.php">Glossaire</a>
+                </li>
+
             </ul>
         </div>
     </div>
