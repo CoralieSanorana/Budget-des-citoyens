@@ -70,7 +70,14 @@ Deficit_budgetaire.php :
 
 Disp_douan.php :
     [] afficher les donnees de la table disp_douan
+        - [] Dispersion douaniere
+           -> function get_all_disp_douan()
     [] ajouter un graphique pour illustrer les donnees
 
 Acronyme.php :
-    [] afficher les donnees de la table acronyme
+    [ok] afficher les donnees de la table acronyme
+       -> get_all_acronyme();
+
+Glossaire.php :
+    [] afficher les donnees de la table glossaire
+       -> get_all_glossaire();
