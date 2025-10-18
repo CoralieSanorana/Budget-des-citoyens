@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 function dbconnect(){
   static $connect = null;
   if($connect === null){
-      $connect = mysqli_connect('localhost','root','','Hofantrano');
+      $connect = mysqli_connect('localhost','root','','Budget_citoyens');
       if(!$connect){
           die('Erreur de connection à la base de données : ' . mysqli_connect_error());
       }
