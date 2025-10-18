@@ -21,6 +21,9 @@ Perspectives_economiques.php : (Coralie)
         -dossier inc: functions.php:
          . [ok]creer get_all_pespect_economiq()
          . [ok]creer get_all_taux_croissance_sectorielle()
+
+        -dossier sql: view.sql:
+         . [ok]creer view v_perspective_economique
     }
 
 Recettes.php :

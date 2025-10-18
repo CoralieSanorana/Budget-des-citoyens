@@ -2,7 +2,7 @@
     include("connexion.php");
 
     function get_all_perspect_economiq(){
-        $requete = "SELECT * FROM PerspectivesEconomiques";
+        $requete = "SELECT * FROM v_perspective_economique";
         $result = mysqli_query(dbconnect(),$requete);
         $result_array = [];
         if ($result) {

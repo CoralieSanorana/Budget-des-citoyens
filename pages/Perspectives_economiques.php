@@ -25,33 +25,17 @@
     
     <table border="1">
         <tr>
-            <th>ANNEES</th>
-            <th>PIB nominal (milliards d’Ariary)</th>
-            <th>Taux de croissance économique</th>
-            <th>Indice des prix à la consommation (fin de période)</th>
-            <th>Ratio de dépenses publiques (% PIB)</th>
-            <th>Solde global (base caisse)</th>
-            <th>Solde primaire (base caisse)</th>
-            <th>Dollars/Ariary</th>
-            <th>Euro/Ariary</th>
-            <th>Public</th>
-            <th>Privé</th>
-            <th>Taux de pression fiscale (% PIB)</th>
+            <th>Agrégat_Macroéconomique</th>
+            <th>2024</th>
+            <th>2025</th>
+            <th>2026</th>
         </tr>
         <?php foreach ($all_perspect_economiq as $perspect) { ?>
             <tr>
-                <td><strong><?= $perspect['annee']; ?></strong></td>
-                <td><?= $perspect['pib_nominal']; ?></td>
-                <td><?= $perspect['taux_croissance']; ?></td>
-                <td><?= $perspect['indice_prix_consommation']; ?></td>
-                <td><?= $perspect['ratio_depenses_publiques_pib']; ?></td>
-                <td><?= $perspect['solde_global_base_caisse']; ?></td>
-                <td><?= $perspect['solde_primaire_base_caisse']; ?></td>
-                <td><?= $perspect['taux_change_dollar_ariary']; ?></td>
-                <td><?= $perspect['taux_change_euro_ariary']; ?></td>
-                <td><?= $perspect['taux_investissement_public_pib']; ?></td>
-                <td><?= $perspect['taux_investissement_prive_pib']; ?></td>
-                <td><?= $perspect['taux_pression_fiscale_pib']; ?></td>
+                <td><strong><?= $perspect['Agrégat_Macroéconomique']; ?></strong></td>
+                <td><?= $perspect['2024']; ?></td>
+                <td><?= $perspect['2025']; ?></td>
+                <td><?= $perspect['2026']; ?></td>
             </tr>
        <?php } ?>
     </table>
