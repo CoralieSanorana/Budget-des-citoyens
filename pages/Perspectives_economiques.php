@@ -4,16 +4,16 @@
     $taux_croissance_sectorielle = get_all_taux_croissance_sectorielle();
 ?>
    <div class="container mt-5">
-        <h1 class="mb-4 text-center titre">Perspectives Économiques</h1>
+        <h1 class="mb-4 text-center titre">Perspectives economiques</h1>
 
     <p>
-        Les grands agrégats macroéconomiques sont présentés dans le tableau ci-après :
+        Les grands agregats macroeconomiques sont presentes dans le tableau ci-après :
     </p>
     
     <table class="table table-striped table-bordered table-hover">
         <thead class="table-dark">
             <tr>
-                <th>Agrégat Macroéconomique</th>
+                <th>Agregat Macroeconomique</th>
                 <th>2024</th>
                 <th>2025</th>
                 <th>2026</th>
@@ -22,7 +22,7 @@
         <tbody>
             <?php foreach ($all_perspect_economiq as $perspect) { ?>
                 <tr>
-                    <td><strong><?= htmlspecialchars($perspect['Agrégat_Macroéconomique']); ?></strong></td>
+                    <td><strong><?= htmlspecialchars($perspect['Agregat_Macroeconomique']); ?></strong></td>
                     <td><?= number_format($perspect['2024'], 1, ',', ' '); ?></td>
                     <td><?= number_format($perspect['2025'], 1, ',', ' '); ?></td>
                     <td><?= number_format($perspect['2026'], 1, ',', ' '); ?></td>
@@ -37,7 +37,7 @@
     </header>
 
     <p>
-        En 2025, l’économie malgache devrait connaître une croissance de 5,0%, soutenue par des performances solides dans plusieurs secteurs stratégiques :
+        En 2025, l’economie malgache devrait connaître une croissance de 5,0%, soutenue par des performances solides dans plusieurs secteurs strategiques :
     </p>
 
     <table class="table table-striped table-bordered table-hover">
