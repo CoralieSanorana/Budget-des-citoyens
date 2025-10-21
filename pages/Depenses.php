@@ -4,19 +4,7 @@
 ?>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<style>
-    /* Style pour centrer le diagramme */
-    .chart-container {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px;
-    }
-    /* Style pour la section */
-    section {
-        padding: 40px 20px;
-    }
-</style>
+ 
 
     <div class="contenair">
         <section id="home">
