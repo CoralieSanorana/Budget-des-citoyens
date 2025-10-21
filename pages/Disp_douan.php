@@ -4,7 +4,7 @@ $gloss = get_all_disp_douan();
 ?>
 
 <div class="container mt-5">
-    <h2 class="mb-4 text-center">Extraits de disposition fiscales et douanieres</h2>
+    <h2 class="mb-4 text-center titre">Extraits de disposition fiscales et douanieres</h2>
 
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         <?php foreach ($gloss as $a) { ?>

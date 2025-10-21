@@ -4,9 +4,7 @@
     $taux_croissance_sectorielle = get_all_taux_croissance_sectorielle();
 ?>
    <div class="container mt-5">
-    <header class="mb-3">
-        <h2>Perspectives Économiques</h2>
-    </header>
+        <h1 class="mb-4 text-center titre">Perspectives Économiques</h1>
 
     <p>
         Les grands agrégats macroéconomiques sont présentés dans le tableau ci-après :
@@ -33,8 +31,9 @@
         </tbody>
     </table>
 
-    <header class="mt-5 mb-3">
-        <h2>Taux de croissance sectorielle</h2>
+    <br><br><br>
+
+    <h1 class="mb-4 text-center titre">Taux de croissance sectorielle</h1>
     </header>
 
     <p>

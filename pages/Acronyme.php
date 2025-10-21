@@ -4,7 +4,7 @@ $acro = get_all_acronyme();
 ?>
 
 <div class="container mt-5">
-    <h2 class="mb-4 text-center">Liste des Acronymes</h2>
+    <h1 class="mb-4 text-center titre">Liste des Acronymes</h1>
 
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         <?php foreach ($acro as $a) { ?>

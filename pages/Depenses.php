@@ -21,7 +21,7 @@
     <div class="contenair">
         <section id="home">
             <div class="row">
-                <h2 class="mb-4 text-center">Depenses</h2>
+                <h1 class="mb-4 text-center titre">Depenses</h1>
                 <div class="col-sm-6">
                     <p>
                         En 2025, les dépenses publiques atteignent 16 304,9 milliards

@@ -8,7 +8,7 @@ $Dons = get_all_Dons();
 ?>
 
 <div class="container mt-5">
-    <h1 class="mb-4">Recettes</h1>
+    <h1 class="mb-4 text-center titre">Recettes</h1>
     <br>
     <h2 class="mb-4">Recettes Fiscales Interieurs (en milliard d'ariary)</h2>
 
