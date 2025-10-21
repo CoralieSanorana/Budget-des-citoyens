@@ -7,6 +7,21 @@ $recete_nonFisc = get_all_recette_nonFisc();
 $Dons = get_all_Dons();
 ?>
 
+<style>
+    #total {
+    background: linear-gradient(90deg, #2c3e50, #27ae60);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+    }
+
+    #total:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0 10px rgba(39, 174, 96, 0.5);
+    }
+</style>
+
 <div class="container mt-5">
     <h1 class="mb-4 text-center titre">Recettes</h1>
     <br>
@@ -27,7 +42,17 @@ $Dons = get_all_Dons();
                     <td><?= number_format($recette['montant_2024'], 1, ',', ' '); ?></td>
                     <td><?= number_format($recette['montant_2025'], 1, ',', ' '); ?></td>
                 </tr>
-           <?php } ?>
+            <?php } ?>
+            <?php 
+                $total_recettefiscale = get_total_Recettes("RecettesFiscalesInterieures"); 
+            ?>
+           <?php foreach($total_recettefiscale as $total){ ?>
+                <tr id="total">
+                    <td>Total</td>
+                    <td><?= $total['total_2024'] ?></td>
+                    <td><?= $total['total_2025'] ?></td>
+                </tr>
+            <?php } ?>
         </tbody>
     </table>
 </div>
@@ -52,6 +77,14 @@ $Dons = get_all_Dons();
                     <td><?= number_format($recette['montant_2025'], 1, ',', ' '); ?></td>
                 </tr>
            <?php } ?>
+           <?php $total_recettedouaniere = get_total_Recettes("RecettesDouanieres"); ?>
+           <?php foreach($total_recettedouaniere as $total){ ?>
+                <tr id="total">
+                    <td>Total</td>
+                    <td><?= $total['total_2024'] ?></td>
+                    <td><?= $total['total_2025'] ?></td>
+                </tr>
+            <?php } ?>
         </tbody>
     </table>
 </div>
@@ -76,6 +109,14 @@ $Dons = get_all_Dons();
                     <td><?= number_format($recette['montant_2025'], 1, ',', ' '); ?></td>
                 </tr>
            <?php } ?>
+           <?php $total_recettedouaniere = get_total_Recettes("RecettesNonFiscales"); ?>
+           <?php foreach($total_recettedouaniere as $total){ ?>
+                <tr id="total">
+                    <td>Total</td>
+                    <td><?= $total['total_2024'] ?></td>
+                    <td><?= $total['total_2025'] ?></td>
+                </tr>
+            <?php } ?>
         </tbody>
     </table>
 </div>
@@ -100,6 +141,14 @@ $Dons = get_all_Dons();
                     <td><?= number_format($recette['montant_2025'], 1, ',', ' '); ?></td>
                 </tr>
            <?php } ?>
+           <?php $total_recettedouaniere = get_total_Recettes("Dons"); ?>
+           <?php foreach($total_recettedouaniere as $total){ ?>
+                <tr id="total">
+                    <td>Total</td>
+                    <td><?= $total['total_2024'] ?></td>
+                    <td><?= $total['total_2025'] ?></td>
+                </tr>
+            <?php } ?>
         </tbody>
     </table>
 </div>

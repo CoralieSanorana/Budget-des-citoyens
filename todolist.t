@@ -61,7 +61,7 @@ Depenses.php : (Coralie)
          . [ok]creer get_all_RepartitionDepensesAdministratif()
     }
 
-Deficit_budgetaire.php :
+Deficit_budgetaire.php : (Coralie)
     [] afficher les donnees de la table deficit_budgetaire
         - [] Financement du deficit
            -> function get_def_buget()
@@ -77,7 +77,10 @@ Disp_douan.php :
 Acronyme.php :
     [ok] afficher les donnees de la table acronyme
        -> get_all_acronyme();
-
 Glossaire.php :
     [] afficher les donnees de la table glossaire
        -> get_all_glossaire();
+
+
+-dossier inc: functions.php: (Coralie)
+    .[ok]creer get_total_Recettes();

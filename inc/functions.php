@@ -242,7 +242,28 @@
     function get_all_disp_douan()
     {
         
-         $requete = "SELECT * FROM DispositionsFiscales";
+        $requete = "SELECT * FROM DispositionsFiscales";
+        $result = mysqli_query(dbconnect(),$requete);
+        $result_array = [];
+        if ($result) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $result_array[] = $row;
+            }
+        } else {
+            echo "Error: " . mysqli_error(dbconnect());
+        }
+        return $result_array;
+    }
+
+    function get_total_Recettes($nom_recette){
+        if (!preg_match('/^[a-zA-Z0-9_]+$/', $nom_recette)) {
+            die("Nom de table invalide !");
+        }
+
+        $requete = "SELECT 
+                    SUM(montant_2024) AS total_2024, 
+                    SUM(montant_2025) AS total_2025 
+                FROM `$nom_recette`";
         $result = mysqli_query(dbconnect(),$requete);
         $result_array = [];
         if ($result) {
