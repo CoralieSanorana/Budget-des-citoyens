@@ -30,7 +30,7 @@
                     </ul>
                 </div>
             </div>
-            <br><br><br>
+            <br>
             <h2>1. Répartition des dépenses par nature économique</h2>
         
             <table border="1" class="table table-striped table-hover align-middle text-center fs-5">

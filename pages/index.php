@@ -2,15 +2,13 @@
 include("../inc/header.php");
 $depense_total = get_total_depense();
 $recette_total = get_total_recette();
+$deficit = get_deficit_budget();
 ?>
 
 <div class="container mt-5">
     <h1 class="mb-4 text-center titre">Tableaux de données</h1>
 
     <div class="grid-links">
-        <div class="link-card">
-            <a href="Perspectives_economiques.php">Perspectives Économiques</a>
-        </div>
         <div class="link-card">
             <a href="Recettes.php">Recettes</a>
             <p>
@@ -25,6 +23,12 @@ $recette_total = get_total_recette();
         </div>
         <div class="link-card">
             <a href="Deficit_budgetaire.php">Déficit Budgétaire</a>
+            <p>
+                Total 2025: <?= $deficit[0]['montant']; ?>
+            </p>
+        </div>
+        <div class="link-card">
+            <a href="Perspectives_economiques.php">Perspectives Économiques</a>
         </div>
         <div class="link-card">
             <a href="Disp_douan.php">Dispositions Douanières</a>
