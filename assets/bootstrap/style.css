@@ -678,9 +678,6 @@ canvas {
         font-size: 2.2rem;
     }
 
-<<<<<<< HEAD
-    
-=======
     h2 {
         font-size: 1.6rem;
     }
@@ -766,4 +763,35 @@ section {
 .align-middle {
     vertical-align: middle;
 }
->>>>>>> 82a169f281ee0dca4eedfc98e63c2973d93ad372
+
+/* --- Correction clics bloqués --- */
+.navbar-custom::before,
+#index-page::before,
+#index-page::after,
+section::before,
+.link-card::before {
+    pointer-events: none;
+}
+
+.link-card {
+    position: relative;
+    z-index: 1;
+}
+
+.link-card p {
+    color: rgb(113, 214, 189);
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 10px;
+    padding: 8px 0;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.link-card p:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+}
+

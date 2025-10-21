@@ -178,7 +178,7 @@
      function get_all_Dons()
     {
         
-         $requete = "SELECT * FROM Dons";
+        $requete = "SELECT * FROM Dons";
         $result = mysqli_query(dbconnect(),$requete);
         $result_array = [];
         if ($result) {
@@ -275,4 +275,33 @@
         }
         return $result_array;
     }
+
+    function get_total_recette(){
+        $requete = "SELECT * FROM RecettesParSource WHERE categorie = 'Total'";
+        $result = mysqli_query(dbconnect(),$requete);
+        $result_array = [];
+        if ($result) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $result_array[] = $row;
+            }
+        } else {
+            echo "Error: " . mysqli_error(dbconnect());
+        }
+        return $result_array;
+    }
+
+    function get_total_depense(){
+        $requete = "SELECT * FROM DepensesParNature WHERE rubrique = 'TOTAL'";
+        $result = mysqli_query(dbconnect(),$requete);
+        $result_array = [];
+        if ($result) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $result_array[] = $row;
+            }
+        } else {
+            echo "Error: " . mysqli_error(dbconnect());
+        }
+        return $result_array;
+    }
+
 ?>

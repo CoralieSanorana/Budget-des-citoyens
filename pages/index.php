@@ -1,4 +1,8 @@
-<?php include("../inc/header.php") ?>
+<?php 
+include("../inc/header.php");
+$depense_total = get_total_depense();
+$recette_total = get_total_recette();
+?>
 
 <div class="container mt-5">
     <h1 class="mb-4 text-center titre">Tableaux de données</h1>
@@ -9,9 +13,15 @@
         </div>
         <div class="link-card">
             <a href="Recettes.php">Recettes</a>
+            <p>
+                Total 2025: <?= $recette_total[0]['montant_2025']; ?>
+            </p>
         </div>
         <div class="link-card">
             <a href="Depenses.php">Dépenses</a>
+            <p>
+                Total 2025: <?= $depense_total[0]['montant_2025']; ?>
+            </p>
         </div>
         <div class="link-card">
             <a href="Deficit_budgetaire.php">Déficit Budgétaire</a>

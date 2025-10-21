@@ -62,11 +62,10 @@ Depenses.php : (Coralie)
     }
 
 Deficit_budgetaire.php : (Coralie)
-    [] afficher les donnees de la table deficit_budgetaire
-        - [] Financement du deficit
-           -> function get_def_buget()
+    [ok] afficher les donnees de la table deficit_budgetaire
+        -> function get_def_buget()
 
-    [] ajouter un graphique pour illustrer les donnees
+    [ok] ajouter un graphique pour illustrer les donnees
 
 Disp_douan.php :
     [] afficher les donnees de la table disp_douan
@@ -84,3 +83,7 @@ Glossaire.php :
 
 -dossier inc: functions.php: (Coralie)
     .[ok]creer get_total_Recettes();
+
+.[ok] creer get_total_recette()
+.[ok] creer get_total_depense()
+

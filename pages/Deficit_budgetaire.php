@@ -14,9 +14,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     $montants[] = $row['montant'];
 }
 ?>
-    <!-- Import de Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     <style>
         body {
             background: linear-gradient(135deg, #eaf2f8, #d1f2eb);
@@ -48,62 +45,64 @@ while ($row = mysqli_fetch_assoc($result)) {
     </style>
 
 <body>
-    <h1>Répartition du déficit budgétaire</h1>
+    <div class="contenair">
+        <h1>Répartition du déficit budgétaire</h1>
 
-    <div class="chart-container">
-        <canvas id="deficitChart"></canvas>
-    </div>
+        <div class="chart-container">
+            <canvas id="deficitChart"></canvas>
+        </div>
 
-    <script>
-        const ctx = document.getElementById('deficitChart');
+        <script>
+            const ctx = document.getElementById('deficitChart');
 
-        const data = {
-            labels: <?= json_encode($labels) ?>,
-            datasets: [{
-                label: 'Montant (en milliards MGA)',
-                data: <?= json_encode($montants) ?>,
-                backgroundColor: [
-                    '#3498db', // bleu
-                    '#2ecc71', // vert
-                    '#f1c40f'  // jaune
-                ],
-                borderColor: '#fff',
-                borderWidth: 2,
-                hoverOffset: 15
-            }]
-        };
+            const data = {
+                labels: <?= json_encode($labels) ?>,
+                datasets: [{
+                    label: 'Montant (en milliards MGA)',
+                    data: <?= json_encode($montants) ?>,
+                    backgroundColor: [
+                        '#3498db', // bleu
+                        '#2ecc71', // vert
+                        '#f1c40f'  // jaune
+                    ],
+                    borderColor: '#fff',
+                    borderWidth: 2,
+                    hoverOffset: 15
+                }]
+            };
 
-        const config = {
-            type: 'pie',
-            data: data,
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                        labels: {
-                            color: '#2c3e50',
-                            font: { size: 14 }
-                        }
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: (tooltipItem) => {
-                                return tooltipItem.label + ': ' + tooltipItem.formattedValue + ' milliards MGA';
+            const config = {
+                type: 'pie',
+                data: data,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#2c3e50',
+                                font: { size: 14 }
                             }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: (tooltipItem) => {
+                                    return tooltipItem.label + ': ' + tooltipItem.formattedValue + ' milliards MGA';
+                                }
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Répartition du financement',
+                            color: '#2c3e50',
+                            font: { size: 16, weight: 'bold' }
                         }
-                    },
-                    title: {
-                        display: true,
-                        text: 'Répartition du financement',
-                        color: '#2c3e50',
-                        font: { size: 16, weight: 'bold' }
                     }
                 }
-            }
-        };
+            };
 
-        new Chart(ctx, config);
-    </script>
+            new Chart(ctx, config);
+        </script>
+    </div>
 </body>
 </html>
